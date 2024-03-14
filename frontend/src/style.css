@@ -1,0 +1,33 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  color: beige;
+  font-family: Verdana;
+}
+
+h2 {
+  color: aqua;
+  font-family: Verdana;
+}
+
+h3 {
+  color: azure;
+  font-family: Verdana;
+}
+
+#performanceChart {
+  position: relative; 
+  height:60vh; 
+  width:70vw;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(10, 52, 124, 0.4976584383753502) 16%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

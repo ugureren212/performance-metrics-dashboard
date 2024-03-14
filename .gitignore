@@ -6,3 +6,4 @@ coverage
 dist
 
 ._*
+.DS_Store

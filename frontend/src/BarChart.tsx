@@ -31,7 +31,7 @@ interface chartData {
   ytdPerformance: number[];
 }
 
-// This function is used to create the configs necessary to create a line chart in react-charjs
+// This function is used to create the configs necessary to create a bar chart in react-charjs
 function BarChart(props: chartProp) {
   const chartXLabels = props.chartData.chartLabels;
 
@@ -95,7 +95,7 @@ function BarChart(props: chartProp) {
       <h3>
         Bar Chart from {startDate} - {endDate}
       </h3>
-      <div id="lineChart">
+      <div id="barChart">
         <Bar options={options} data={data} />
       </div>
     </>

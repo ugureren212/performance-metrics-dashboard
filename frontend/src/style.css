@@ -18,7 +18,8 @@ h3 {
 }
 
 #lineChart,
-#barChart {
+#barChart,
+#areaLineChart {
   position: relative;
   height: 60vh;
   width: 70vw;

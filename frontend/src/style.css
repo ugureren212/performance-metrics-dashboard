@@ -17,10 +17,11 @@ h3 {
   font-family: Verdana;
 }
 
-#performanceChart {
-  position: relative; 
-  height:60vh; 
-  width:70vw;
+#lineChart,
+#barChart {
+  position: relative;
+  height: 60vh;
+  width: 70vw;
   border: 1px solid lightgrey;
   border-radius: 10px;
   background: rgb(2, 0, 36);

@@ -1,6 +1,7 @@
-import PerformanceChart from "./PerformanceChart";
+import BarChart from "./BarChart";
 import { useState, useEffect } from "react";
 import "./style.css";
+import LineChart from "./LineChart";
 
 function App() {
   const [fundData, setfundData] = useState(null);
@@ -16,7 +17,6 @@ function App() {
       });
   }, []);
 
-  
   return (
     <div className="App">
       <header className="App-header">
@@ -24,11 +24,18 @@ function App() {
         <h1>Performance</h1>
       </header>
       <div>
-        { 
-        (fundData)
-          ? <PerformanceChart chartData={fundData} />
-          : <h1>Chart loading...</h1>
-        }
+        {fundData ? (
+          <BarChart chartData={fundData} />
+        ) : (
+          <h1>Bar chart loading...</h1>
+        )}
+      </div>
+      <div>
+        {fundData ? (
+          <LineChart chartData={fundData} />
+        ) : (
+          <h1>Line chart loading...</h1>
+        )}
       </div>
     </div>
   );

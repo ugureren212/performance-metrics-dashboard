@@ -3,18 +3,18 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -32,7 +32,7 @@ interface chartData {
 }
 
 // This function is used to create the configs necessary to create a line chart in react-charjs
-function PerformanceChart(props: chartProp) {
+function BarChart(props: chartProp) {
   const chartXLabels = props.chartData.chartLabels;
 
   const startDate = chartXLabels[0];
@@ -45,22 +45,16 @@ function PerformanceChart(props: chartProp) {
         label: "Base monthly performance (%)",
         data: props.chartData.baseMonthlyPerformance,
         backgroundColor: "green",
-        borderColor: "green",
-        yAxisID: "y",
       },
       {
         label: "Life to Date (%)",
         data: props.chartData.ltdPerformance,
         backgroundColor: "red",
-        borderColor: "red",
-        yAxisID: "y",
       },
       {
         label: "Year to Date (%)",
         data: props.chartData.ytdPerformance,
         backgroundColor: "blue",
-        borderColor: "blue",
-        yAxisID: "y",
       },
     ],
   };
@@ -99,13 +93,13 @@ function PerformanceChart(props: chartProp) {
   return (
     <>
       <h3>
-        An overview from {startDate} - {endDate}
+        Bar Chart from {startDate} - {endDate}
       </h3>
-      <div id="performanceChart" >
-        <Line options={options} data={data} />
+      <div id="lineChart">
+        <Bar options={options} data={data} />
       </div>
     </>
   );
 }
 
-export default PerformanceChart;
+export default BarChart;

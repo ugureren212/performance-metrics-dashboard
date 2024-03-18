@@ -2,13 +2,9 @@ body {
   background-color: black;
 }
 
-h1 {
-  color: beige;
-  font-family: Verdana;
-}
-
 h2 {
   color: aqua;
+  text-align: center;
   font-family: Verdana;
 }
 
@@ -17,12 +13,28 @@ h3 {
   font-family: Verdana;
 }
 
+/* TODO: stop grid from expanding on startup */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.grid-item {
+  border: 1px solid#f2f2f2;
+  text-align: center;
+  width: 99%;
+  height: 100%;
+}
+
 #lineChart,
 #barChart,
 #areaLineChart {
   position: relative;
-  height: 60vh;
-  width: 70vw;
+  height: inherit;
+  width: inherit;
   border: 1px solid lightgrey;
   border-radius: 10px;
   background: rgb(2, 0, 36);

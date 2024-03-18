@@ -2,6 +2,7 @@ import AreaLineChart from "./AreaLineChart";
 import BarChart from "./BarChart";
 import LineChart from "./LineChart";
 import { useState, useEffect } from "react";
+import ChartForm from "./ChartForm";
 import "./style.css";
 
 function App() {
@@ -21,29 +22,36 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>Fund Performance</h2>
-        <h1>Performance</h1>
+        {/* add start year and end year in heading */}
+        <h2>Fund Performance between </h2>
       </header>
-      <div>
-        {fundData ? (
-          <AreaLineChart chartData={fundData} />
-        ) : (
-          <h1>Bar chart loading...</h1>
-        )}
-      </div>
-      <div>
-        {fundData ? (
-          <BarChart chartData={fundData} />
-        ) : (
-          <h1>Bar chart loading...</h1>
-        )}
-      </div>
-      <div>
-        {fundData ? (
-          <LineChart chartData={fundData} />
-        ) : (
-          <h1>Line chart loading...</h1>
-        )}
+      <div className="grid-container">
+        <div className="grid-item">
+          {" "}
+          {fundData ? (
+            <AreaLineChart chartData={fundData} />
+          ) : (
+            <h1>Bar chart loading...</h1>
+          )}
+        </div>
+        <div className="grid-item">
+          <ChartForm />
+        </div>
+        <div className="grid-item">
+          {fundData ? (
+            <BarChart chartData={fundData} />
+          ) : (
+            <h1>Bar chart loading...</h1>
+          )}
+        </div>
+        <div className="grid-item">
+          {" "}
+          {fundData ? (
+            <LineChart chartData={fundData} />
+          ) : (
+            <h1>Line chart loading...</h1>
+          )}
+        </div>
       </div>
     </div>
   );

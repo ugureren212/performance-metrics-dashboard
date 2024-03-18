@@ -35,11 +35,6 @@ interface chartData {
 
 // This function is used to create the configs necessary to create a area line chart in react-charjs
 function AreaLineChart(props: chartProp) {
-  const chartXLabels = props.chartData.chartLabels;
-
-  const startDate = chartXLabels[0];
-  const endDate = chartXLabels[chartXLabels.length - 1];
-
   const data = {
     labels: props.chartData.chartLabels,
     datasets: [
@@ -103,9 +98,6 @@ function AreaLineChart(props: chartProp) {
 
   return (
     <>
-      <h3>
-        Area line Chart from {startDate} - {endDate}
-      </h3>
       <div id="areaLineChart">
         <Line options={options} data={data} />
       </div>

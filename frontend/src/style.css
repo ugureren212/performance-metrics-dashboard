@@ -13,6 +13,9 @@ h3 {
   font-family: Verdana;
 }
 
+label {
+  color: aqua;
+}
 /* TODO: stop grid from expanding on startup */
 
 .grid-container {

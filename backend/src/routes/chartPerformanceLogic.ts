@@ -153,4 +153,30 @@ function returnFundData(req: Request, res: Response) {
   res.send(JSON.stringify(chartData));
 }
 
-export default returnFundData;
+function storeRandomChartData(req: Request, res: Response) {
+  const randomChartDataFilePath = path.resolve(
+    __dirname,
+    "../../data/randomChartData.json",
+  );
+  const message = req.body;
+  if (!message) {
+    return res.status(400).json({ error: "Message is required" });
+  }
+
+  fs.readFile(randomChartDataFilePath, "utf8", (err, data) => {
+    if (err) throw err;
+
+    const jsonArray = JSON.parse(data);
+
+    jsonArray.push(message);
+
+    const jsonString = JSON.stringify(jsonArray, null, 2);
+
+    fs.writeFile(randomChartDataFilePath, jsonString, (err) => {
+      if (err) throw err;
+      console.log("Data appended to data.json");
+    });
+  });
+}
+
+export { returnFundData, storeRandomChartData };

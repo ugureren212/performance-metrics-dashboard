@@ -15,7 +15,7 @@ function ChartForm() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    fetch("http://localhost:3030/fundData", {
+    fetch("http://localhost:3030/storeRandomChartData", {
       method: "Post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(graphData),

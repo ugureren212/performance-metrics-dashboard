@@ -24,7 +24,7 @@ function ChartForm() {
 
   return (
     <>
-      <h3>some type of form</h3>
+      <h3>Add or delete random chart data</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="plotData">
           Click button to add random data to graph:
@@ -37,10 +37,27 @@ function ChartForm() {
         >
           Random plot data
         </button>
+        <br></br>
         <label htmlFor="deleteData">
           Delete plotted data. Select from right panel:
         </label>
         <button id="deleteData">Delete plotted data</button>
+
+        <br></br>
+        <br></br>
+
+        <label htmlFor="deleteData">
+          Bellow is a list of currently plotted data. Feel free to select and
+          delete the ones you do not want.
+        </label>
+
+        <br></br>
+
+        <select size={10}>
+          <option>Not Started</option>
+          <option>In Progess</option>
+          <option>Completed</option>
+        </select>
       </form>
     </>
   );

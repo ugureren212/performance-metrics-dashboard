@@ -20,6 +20,7 @@ label {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: stretch;
   height: 100vh;
 }
@@ -39,6 +40,14 @@ label {
   box-sizing: border-box;
   margin: 5px;
   border: 1px solid white;
+}
+
+.big-container-box {
+  width: calc(65% - 20px);
+}
+
+.small-container-box {
+  width: 35%;
 }
 
 #lineChart,

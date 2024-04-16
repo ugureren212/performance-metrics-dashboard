@@ -27,8 +27,18 @@ function App() {
       </header>
 
       <div className="container">
-        <div className="full-width">
-          <ChartForm />
+        <div className="row">
+          <div className="container-box big-container-box">
+            {" "}
+            {fundData ? (
+              <AreaLineChart chartData={fundData} />
+            ) : (
+              <h1>Bar chart loading...</h1>
+            )}
+          </div>
+          <div className="container-box small-container-box">
+            <ChartForm />
+          </div>
         </div>
         <div className="row">
           <div className="container-box">

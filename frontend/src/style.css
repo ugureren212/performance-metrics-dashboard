@@ -16,30 +16,34 @@ h3 {
 label {
   color: aqua;
 }
-/* TODO: stop grid from expanding on startup */
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  gap: 20px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100vh;
 }
 
-.grid-item {
-  border: 1px solid#f2f2f2;
-  text-align: center;
-  width: 99%;
-  height: 100%;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container-box {
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  margin: 5px;
+  border: 1px solid white;
 }
 
 #lineChart,
 #barChart,
 #areaLineChart {
-  position: relative;
-  height: inherit;
-  width: inherit;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,

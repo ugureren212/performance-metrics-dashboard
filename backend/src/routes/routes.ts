@@ -1,9 +1,15 @@
 import { Router } from "express";
-import { returnFundData, storeRandomChartData } from "./chartPerformanceLogic";
+import {
+  returnFundData,
+  returnRandomChartData,
+  storeRandomChartData,
+} from "./chartPerformanceLogic";
 
 const router = Router();
 
 router.get("/fundData", returnFundData);
+
+router.get("/randomChartData", returnRandomChartData);
 
 router.post("/storeRandomChartData", storeRandomChartData);
 

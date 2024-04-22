@@ -1,1 +1,178 @@
-[]
+[
+  {
+    "chartID": "18f068990ca",
+    "chartColour": "rgb(195, 223, 204)",
+    "chartData": [
+      21.08, 26.53, 1.67, 41.3, 73.86, 86.02, 18.21, 43.15, 10.08, 11.77, 16.03,
+      33.89
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  },
+  {
+    "chartID": "18f06a270b1",
+    "chartColour": "rgb(128, 242, 115)",
+    "chartData": [
+      60.4, 60.04, 55.23, 21.57, 95.54, 63.02, 90.16, 91.86, 55.53, 84.3, 99.06,
+      19.55
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  },
+  {
+    "chartID": "18f06a27149",
+    "chartColour": "rgb(159, 195, 38)",
+    "chartData": [
+      69.19, 99.77, 24.84, 45.47, 96.35, 20.34, 10.44, 6.86, 62.6, 88.11, 36.92,
+      70.92
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  },
+  {
+    "chartID": "18f06a271b9",
+    "chartColour": "rgb(7, 50, 62)",
+    "chartData": [
+      21.61, 49.29, 89.17, 42.38, 94.57, 60.97, 22.87, 12.71, 37.04, 93.53,
+      61.7, 77.17
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  },
+  {
+    "chartID": "18f06d0dd6a",
+    "chartColour": "rgb(15, 59, 178)",
+    "chartData": [
+      3.96, 19.83, 56.98, 44.92, 41.75, 38.19, 12.12, 34.02, 40.05, 12.24,
+      35.59, 31.26
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  },
+  {
+    "chartID": "18f06d0de41",
+    "chartColour": "rgb(181, 99, 87)",
+    "chartData": [
+      67.13, 24.24, 29.25, 51.15, 64.58, 87.5, 70.84, 31.93, 48.02, 40.57,
+      92.68, 81.8
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  },
+  {
+    "chartID": "18f06d0df29",
+    "chartColour": "rgb(74, 90, 101)",
+    "chartData": [
+      14.11, 55.96, 63.69, 98.12, 53.9, 55.81, 99.07, 27.94, 42.13, 38.27,
+      91.45, 86.57
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  },
+  {
+    "chartID": "18f06d0dfc1",
+    "chartColour": "rgb(48, 212, 230)",
+    "chartData": [
+      88.07, 72.25, 4.23, 56.69, 43.65, 86.21, 93.58, 50.82, 64.81, 15.91,
+      68.06, 72.47
+    ],
+    "chartLabels": [
+      "Label 0",
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4",
+      "Label 5",
+      "Label 6",
+      "Label 7",
+      "Label 8",
+      "Label 9",
+      "Label 10",
+      "Label 11"
+    ]
+  }
+]

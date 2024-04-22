@@ -1,16 +1,46 @@
 import { useState } from "react";
 
-function generateRandomGraphData() {
-  const graphData: number[] = [];
+type RandomChartData = {
+  chartID: string;
+  chartColour: string;
+  chartData: number[];
+  chartLabels: string[];
+};
+
+function generateRandomChartData() {
+  const chartID = new Date().getTime().toString(16);
+
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  const chartColour = `rgb(${r}, ${g}, ${b})`;
+
+  const chartData: number[] = [];
+  const chartLabels: string[] = [];
+
   for (let i = 0; i < 12; i++) {
     const randomNumber = Math.random() * 100;
-    graphData.push(Number(randomNumber.toFixed(2)));
+    chartData.push(Number(randomNumber.toFixed(2)));
+    chartLabels.push(`Label ${i}`);
   }
-  return graphData;
+
+  const chartDataObject: RandomChartData = {
+    chartID,
+    chartColour,
+    chartData,
+    chartLabels,
+  };
+  return chartDataObject;
 }
 
 function ChartForm() {
-  const [graphData, setGraphData] = useState([1, 2, 3]);
+  const [chartData, setChartData] = useState<RandomChartData>({
+    chartID: "",
+    chartColour: "",
+    chartData: [],
+    chartLabels: [],
+  });
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,7 +48,7 @@ function ChartForm() {
     fetch("http://localhost:3030/storeRandomChartData", {
       method: "Post",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(graphData),
+      body: JSON.stringify(chartData),
     });
   }
 
@@ -27,12 +57,12 @@ function ChartForm() {
       <h3>Add or delete random chart data</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="plotData">
-          Click button to add random data to graph:
+          Click button to add random data to chart:
         </label>
         <button
           id="plotData"
           onClick={() => {
-            setGraphData(generateRandomGraphData());
+            setChartData(generateRandomChartData());
           }}
         >
           Random plot data

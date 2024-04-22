@@ -2,6 +2,12 @@ import * as fs from "fs";
 import * as path from "path";
 import { Request, Response } from "express";
 
+type RandomChartData = {
+  chartID: string;
+  chartColour: string;
+  chartData: number[];
+};
+
 interface chartData {
   chartLabels: string[];
   baseMonthlyPerformance: number[];
@@ -15,6 +21,11 @@ export interface MonthlyData {
   pricePerShare: number;
   dividendPerShare: number;
 }
+
+const randomChartDataFilePath = path.resolve(
+  __dirname,
+  "../../data/randomChartData.json",
+);
 
 export function calculateChartLabels(data: MonthlyData[]) {
   const chartLabels: string[] = [];
@@ -111,6 +122,39 @@ function calculateYTDPerformance(data: MonthlyData[]): number[] {
   return yearToDatePerforamnce;
 }
 
+function returnRandomChartData(req: Request, res: Response) {
+  const readJsonFile = (filePath: string): Promise<RandomChartData[]> => {
+    return new Promise((resolve, reject) => {
+      fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+
+        try {
+          const jsonData = JSON.parse(data) as RandomChartData[];
+          resolve(jsonData);
+        } catch (parseErr) {
+          reject(parseErr);
+        }
+      });
+    });
+  };
+
+  const filePath = randomChartDataFilePath;
+
+  readJsonFile(filePath)
+    .then((result) => {
+      res.status(200);
+      res.send(JSON.stringify(result));
+      return result;
+    })
+    .catch((err) => {
+      console.error("Error reading JSON file:", err);
+      res.status(500).json({ message: "Error fetching data" });
+    });
+}
+
 function readCSV(): MonthlyData[] {
   const data: MonthlyData[] = [];
   const csvFilePath = path.resolve(
@@ -154,10 +198,6 @@ function returnFundData(req: Request, res: Response) {
 }
 
 function storeRandomChartData(req: Request, res: Response) {
-  const randomChartDataFilePath = path.resolve(
-    __dirname,
-    "../../data/randomChartData.json",
-  );
   const message = req.body;
   if (!message) {
     return res.status(400).json({ error: "Message is required" });
@@ -179,4 +219,4 @@ function storeRandomChartData(req: Request, res: Response) {
   });
 }
 
-export { returnFundData, storeRandomChartData };
+export { returnFundData, storeRandomChartData, returnRandomChartData };

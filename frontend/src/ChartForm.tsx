@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+interface chartProp {
+  chartData: RandomChartData[];
+}
 
 type RandomChartData = {
   chartID: string;
@@ -34,13 +38,32 @@ function generateRandomChartData() {
   return chartDataObject;
 }
 
-function ChartForm() {
+function chartDataList(chartDataCollection: RandomChartData[]): string[] {
+  const ChartIDList: string[] = [];
+  chartDataCollection.map((chartData) => {
+    ChartIDList.push(chartData.chartID);
+  });
+  return ChartIDList;
+}
+
+function ChartForm(props: chartProp) {
   const [chartData, setChartData] = useState<RandomChartData>({
     chartID: "",
     chartColour: "",
     chartData: [],
     chartLabels: [],
   });
+
+  // Appends chartDataID to select form
+  useEffect(() => {
+    const chartSelect = document.getElementById(
+      "chartSelect",
+    ) as HTMLSelectElement;
+    const chartList = chartDataList(props.chartData);
+    chartList.forEach((chartID) => {
+      chartSelect.options[chartSelect.options.length] = new Option(chartID);
+    });
+  }, []);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -83,11 +106,7 @@ function ChartForm() {
 
         <br></br>
 
-        <select size={10}>
-          <option>Not Started</option>
-          <option>In Progess</option>
-          <option>Completed</option>
-        </select>
+        <select size={10} id="chartSelect"></select>
       </form>
     </>
   );

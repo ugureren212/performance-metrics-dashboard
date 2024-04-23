@@ -21,7 +21,7 @@ function App() {
       });
   }, []);
 
-  // // TODO: add proper error handling
+  // TODO: add proper error handling
   useEffect(() => {
     fetch("http://localhost:3030/randomChartData")
       .then((res) => {
@@ -42,7 +42,6 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="container-box big-container-box">
-            {" "}
             {randomChartData ? (
               <RandomDataLineChart chartData={randomChartData} />
             ) : (
@@ -50,7 +49,11 @@ function App() {
             )}
           </div>
           <div className="container-box small-container-box">
-            <ChartForm />
+            {randomChartData ? (
+              <ChartForm chartData={randomChartData} />
+            ) : (
+              <h1>Random data chart form loading...</h1>
+            )}
           </div>
         </div>
         <div className="row">
